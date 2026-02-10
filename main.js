@@ -6,6 +6,10 @@
         const colorBtn = document.getElementById('colorBtn');
         const favoritesList = document.getElementById('favoritesList');
         const copyNotification = document.getElementById('copyNotification');
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        const quoteBox = document.querySelector('.quote-box');
+        const container = document.querySelector('.container');
+
 
         
         const backgroundColors = [
@@ -45,6 +49,35 @@
 
         let currentQuote = null;
         let favorites = JSON.parse(localStorage.getItem('favoriteQuotes')) || [];
+        let quoteDarkMode = JSON.parse(localStorage.getItem('quoteDarkMode')) || false;
+
+        function applyQuoteDarkMode() {
+        // if (!container && !quoteBox) return;
+         quoteBox.classList.toggle('dark', quoteDarkMode);
+         container.classList.toggle('dark', quoteDarkMode);
+
+        if (darkModeBtn) {
+        darkModeBtn.innerHTML = quoteDarkMode
+        ? '<span>☀️</span> Light Mode'
+        : '<span>🌙</span> Dark Mode';
+   }
+
+  localStorage.setItem('quoteDarkMode', JSON.stringify(quoteDarkMode));
+}
+
+
+//         function applyQuoteDarkMode() {
+//         if (!quoteBox) return;
+//         quoteBox.classList.toggle('dark', quoteDarkMode);
+
+//         if (darkModeBtn) {
+//         darkModeBtn.innerHTML = quoteDarkMode
+//         ? '<span>☀️</span> Light Mode'
+//         : '<span>🌙</span> Dark Mode';
+//    }
+
+//   localStorage.setItem('quoteDarkMode', JSON.stringify(quoteDarkMode));
+// }
 
         
         function getRandomQuote() {
@@ -181,6 +214,11 @@
         copyBtn.addEventListener('click', copyQuote);
         favoriteBtn.addEventListener('click', toggleFavorite);
         colorBtn.addEventListener('click', changeBackgroundColor);
+       
+        darkModeBtn.addEventListener('click', () => {
+        quoteDarkMode = !quoteDarkMode;
+        applyQuoteDarkMode();
+       });
 
         
         document.addEventListener('keydown', (e) => {
@@ -189,7 +227,9 @@
                 generateNewQuote();
             }
         });
+        
 
+        applyQuoteDarkMode();
         
         generateNewQuote();
 

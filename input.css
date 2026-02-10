@@ -280,6 +280,27 @@
         }
 
     
+   .container.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.container.dark .quote-box {
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.container.dark .quote-box .quote-text {
+  color: #e5e7eb;
+}
+
+.container.dark .quote-box .quote-author {
+  color: #c7d2fe;
+}
+
+
+
+    
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
