@@ -6,7 +6,6 @@ A simple, fun **Random Quote Generator** built with **HTML, CSS, and JavaScript*
 It displays inspiring coding quotes, lets you **copy** them, **save favorites**, and even **change the background gradient**.
 
 ## Features
-
 * 🎲 **Generate Random Quotes**: Click “New Quote” to display a random quote.
 * 📋 **Copy to Clipboard**: Copy the current quote (with author) to your clipboard. Includes a fallback for browsers where `navigator.clipboard` isn’t available.
 * ❤️⭐ **Favorite Quotes**: Toggle favorites (Favorite / Favorited) and store them locally in your browser using `localStorage`.
