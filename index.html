@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="./input.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Coding Quote Generator ✨</h1>
+        
+        <div class="quote-box">
+            <p class="quote-text" id="quoteText">Click the button to get inspired!</p>
+            <p class="quote-author" id="quoteAuthor">Welcome</p>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-primary" id="newQuoteBtn">
+                <span>🎲</span>
+                New Quote
+            </button>
+            <button class="btn-secondary" id="copyBtn">
+                <span>📋</span>
+                Copy Quote
+            </button>
+            <button class="btn-favorite" id="favoriteBtn">
+                <span>❤️</span>
+                Favorite
+            </button>
+            <button class="btn-secondary" id="colorBtn">
+                <span>🎨</span>
+                Change Color
+            </button>
+        </div>
+
+        <div class="favorites-section">
+            <h2 class="favorites-title">
+                <span>⭐</span>
+                Favorite Quotes
+            </h2>
+            <div class="favorites-list" id="favoritesList">
+                <div class="empty-state">No favorites yet. Start adding some!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-notification" id="copyNotification">
+        ✓ Quote copied to clipboard!
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
